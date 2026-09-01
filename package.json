@@ -1,0 +1,12 @@
+{
+  "name": "zovo-streamscope",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test test/*.test.mjs",
+    "check": "npm test && node scripts/check-dist.mjs"
+  },
+  "license": "GPL-3.0-only"
+}

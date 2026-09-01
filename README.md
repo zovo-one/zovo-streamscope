@@ -1,3 +1,16 @@
+# Zovo Streamscope
+
+This repository is the complete GPL-3.0 source for Zovo Streamscope, a passive
+per-tab media inspector that copies observed stream URLs for use in an external
+player and never downloads media. See [README-STREAMSCOPE.md](README-STREAMSCOPE.md)
+for build instructions and [CHANGES-STREAMSCOPE.md](CHANGES-STREAMSCOPE.md) for
+the modification statement.
+
+The original upstream documentation begins below and is preserved with its
+copyright and licence notices.
+
+---
+
 <p align="center"> [中文] | [<a href="README_en.md">English</a>] | [<a href="README_es.md">Español</a>] | [<a href="README_ru.md">Русский</a>]</p>
 
 # 📑简介

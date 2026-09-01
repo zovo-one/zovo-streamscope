@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Zovo Streamscope</title>
+  <link rel="stylesheet" href="scope-deck.css">
+</head>
+<body class="ssx-popup">
+  <main class="ssx-shell">
+    <header class="ssx-topbar">
+      <div class="ssx-identity">
+        <svg class="ssx-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M4 16c3.4-6 7.4-9 12-9s8.6 3 12 9c-3.4 6-7.4 9-12 9S7.4 22 4 16Z"/>
+          <circle cx="16" cy="16" r="4.5"/>
+          <path d="M16 2v4M16 26v4M2 16h4M26 16h4"/>
+        </svg>
+        <div>
+          <strong>Zovo Streamscope</strong>
+          <span id="ssx-tab-host">Waiting for a web page</span>
+        </div>
+      </div>
+      <span class="ssx-status" id="ssx-status"><i aria-hidden="true"></i> Observing</span>
+    </header>
+
+    <section class="ssx-hero" aria-labelledby="ssx-hero-label">
+      <div class="ssx-hero-value" id="ssx-live-count" role="status" aria-live="polite">0</div>
+      <div class="ssx-section-label" id="ssx-hero-label">Media requests this page</div>
+      <p>URLs only. Nothing is fetched or saved as a file.</p>
+    </section>
+
+    <nav class="ssx-tabs" role="tablist" aria-label="Streamscope views">
+      <button type="button" role="tab" aria-selected="true" aria-controls="ssx-live-panel" id="ssx-live-tab" data-panel="live">Streams</button>
+      <button type="button" role="tab" aria-selected="false" aria-controls="ssx-elements-panel" id="ssx-elements-tab" data-panel="elements">Page media <span id="ssx-element-count">0</span></button>
+      <button type="button" role="tab" aria-selected="false" aria-controls="ssx-history-panel" id="ssx-history-tab" data-panel="history">History <span id="ssx-history-count">0</span></button>
+    </nav>
+
+    <section class="ssx-panel" role="tabpanel" id="ssx-live-panel" aria-labelledby="ssx-live-tab">
+      <div class="ssx-panel-head">
+        <span class="ssx-section-label">Passive request inventory</span>
+        <button type="button" class="ssx-text-button" id="ssx-clear-live">Archive & clear</button>
+      </div>
+      <div class="ssx-stream-list" id="ssx-live-list"></div>
+    </section>
+
+    <section class="ssx-panel" role="tabpanel" id="ssx-elements-panel" aria-labelledby="ssx-elements-tab" hidden>
+      <div class="ssx-control-card">
+        <div>
+          <span class="ssx-section-label">Live audio & video elements</span>
+          <p>Autoplay is flagged before your first page interaction.</p>
+        </div>
+        <div class="ssx-control-row">
+          <button type="button" class="ssx-secondary-button" id="ssx-mute-all">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Zm4.5 4.5 5 5m0-5-5 5"/></svg>
+            Mute all
+          </button>
+          <button type="button" class="ssx-secondary-button" id="ssx-pause-all">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zM14 5h4v14h-4z"/></svg>
+            Pause all
+          </button>
+        </div>
+      </div>
+      <div class="ssx-element-list" id="ssx-element-list"></div>
+    </section>
+
+    <section class="ssx-panel" role="tabpanel" id="ssx-history-panel" aria-labelledby="ssx-history-tab" hidden>
+      <div class="ssx-panel-head">
+        <div>
+          <span class="ssx-section-label">This browser session</span>
+          <p id="ssx-history-limit">Recent URLs stay in extension storage.</p>
+        </div>
+        <button type="button" class="ssx-text-button" id="ssx-clear-history">Clear</button>
+      </div>
+      <div class="ssx-stream-list" id="ssx-history-list"></div>
+    </section>
+
+    <aside class="ssx-upgrade" id="ssx-upgrade">
+      <div><span class="ssx-pro-badge">PRO</span><strong>Keep a deeper session trail</strong><p>Raise history from 80 to 500 observed URLs.</p></div>
+      <a href="https://zovo.one/pricing" target="_blank" rel="noreferrer">View plans</a>
+    </aside>
+
+    <footer class="ssx-footer">
+      <span>Passive inspector · no downloads</span>
+      <button type="button" id="ssx-open-settings" aria-label="Open Streamscope settings">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm8.9 5.3v-2.6l-2.2-.8a7 7 0 0 0-.7-1.6l1-2.1-1.9-1.9-2.1 1a7 7 0 0 0-1.6-.7L12.6 2H10l-.8 2.3a7 7 0 0 0-1.6.7l-2.1-1-1.9 1.9 1 2.1a7 7 0 0 0-.7 1.6l-2.2.8V13l2.2.8a7 7 0 0 0 .7 1.6l-1 2.1 1.9 1.9 2.1-1a7 7 0 0 0 1.6.7l.8 2.3h2.6l.8-2.3a7 7 0 0 0 1.6-.7l2.1 1 1.9-1.9-1-2.1a7 7 0 0 0 .7-1.6l2.2-.8Z"/></svg>
+      </button>
+    </footer>
+  </main>
+  <div class="ssx-toast" id="ssx-toast" role="status" aria-live="polite"></div>
+  <script src="scope-license.client.js"></script>
+  <script src="scopeboard.controller.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+/* Original Streamscope store art. SPDX-License-Identifier: GPL-3.0-only */
+* { box-sizing: border-box; }
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+body { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #f8fafc; background: #06111f; }
+.canvas { position: relative; width: 100%; height: 100%; overflow: hidden; background:
+  radial-gradient(circle at 80% 18%, rgba(34,211,238,.22), transparent 25%),
+  radial-gradient(circle at 5% 92%, rgba(14,116,144,.42), transparent 31%),
+  linear-gradient(135deg,#071525,#0b1220 62%,#081926); }
+.canvas::before { content:""; position:absolute; inset:0; opacity:.26; background-image:radial-gradient(rgba(103,232,249,.42) 1px,transparent 1px); background-size:28px 28px; mask-image:linear-gradient(90deg,#000,transparent 75%); }
+.copy { position:absolute; z-index:2; left:72px; top:94px; width:510px; }
+.eyebrow { color:#67e8f9; font-size:14px; font-weight:800; letter-spacing:.16em; text-transform:uppercase; }
+h1 { margin:18px 0 20px; font-size:68px; line-height:.98; letter-spacing:-.055em; }
+.copy p { max-width:480px; margin:0; color:#b7c8d9; font-size:23px; line-height:1.45; }
+.chips { display:flex; flex-wrap:wrap; gap:10px; margin-top:30px; }
+.chips span { padding:8px 12px; border:1px solid rgba(103,232,249,.28); border-radius:999px; background:rgba(21,94,117,.25); color:#cffafe; font-size:15px; font-weight:700; }
+.scope-ring { position:absolute; z-index:1; right:-90px; top:-130px; width:700px; height:700px; border:2px solid rgba(103,232,249,.15); border-radius:50%; }
+.scope-ring::before,.scope-ring::after { content:""; position:absolute; border:2px solid rgba(103,232,249,.12); border-radius:50%; }
+.scope-ring::before { inset:90px; }.scope-ring::after { inset:190px; }
+.device { position:absolute; z-index:3; right:80px; top:48px; width:400px; height:684px; padding:14px; border:1px solid rgba(148,163,184,.28); border-radius:26px; background:#111c2c; box-shadow:0 34px 90px -28px rgba(0,0,0,.78); transform:rotate(1.4deg); }
+.device img { width:100%; height:100%; object-fit:cover; object-position:top; border-radius:14px; }
+.light { color:#102033; background:#eaf6f8; }
+.light .canvas { background:radial-gradient(circle at 8% 8%,rgba(34,211,238,.25),transparent 28%),linear-gradient(145deg,#f8fbfc,#d8eef1); }
+.light .canvas::before { opacity:.2; background-image:radial-gradient(rgba(14,116,144,.4) 1px,transparent 1px); }
+.light .eyebrow { color:#0e7490; }
+.light .copy p { color:#4b6474; }
+.light .chips span { border-color:rgba(14,116,144,.22); background:rgba(255,255,255,.65); color:#155e75; }
+.light .device { left:72px; right:auto; background:#fff; border-color:rgba(14,116,144,.2); box-shadow:0 34px 90px -34px rgba(14,60,76,.35); transform:rotate(-1.2deg); }
+.light .copy { left:auto; right:74px; top:140px; }
+.options-shot .device { right:54px; top:78px; width:720px; height:650px; transform:none; }
+.options-shot .device img { object-fit:cover; object-position:top; }
+.options-shot .copy { width:390px; top:150px; }
+.options-shot h1 { font-size:58px; }
+.small .canvas { display:flex; align-items:center; padding:32px; }
+.small .brand { position:relative; z-index:2; display:flex; align-items:center; gap:18px; }
+.small .brand img { width:74px; height:74px; border-radius:18px; box-shadow:0 18px 45px -20px #000; }
+.small h1 { margin:0 0 6px; font-size:38px; }
+.small p { margin:0; color:#b7c8d9; font-size:16px; }
+.marquee .canvas { display:flex; align-items:center; justify-content:center; gap:54px; }
+.marquee .brand-icon { position:relative; z-index:2; width:170px; height:170px; border-radius:38px; box-shadow:0 36px 80px -28px #000; }
+.marquee .copy { position:relative; left:auto; top:auto; width:720px; }
+.marquee h1 { font-size:76px; }
+.marquee .copy p { max-width:680px; font-size:24px; }

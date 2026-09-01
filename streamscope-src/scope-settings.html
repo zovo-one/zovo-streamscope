@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Zovo Streamscope settings</title>
+  <link rel="stylesheet" href="scope-deck.css">
+</head>
+<body class="ssx-settings-page">
+  <main class="ssx-settings-shell">
+    <header class="ssx-settings-header">
+      <div class="ssx-identity">
+        <svg class="ssx-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M4 16c3.4-6 7.4-9 12-9s8.6 3 12 9c-3.4 6-7.4 9-12 9S7.4 22 4 16Z"/>
+          <circle cx="16" cy="16" r="4.5"/><path d="M16 2v4M16 26v4M2 16h4M26 16h4"/>
+        </svg>
+        <div><strong>Zovo Streamscope</strong><span>Settings & licence</span></div>
+      </div>
+      <a class="ssx-source-link" href="https://github.com/theluckystrike/zovo-streamscope" target="_blank" rel="noreferrer">Complete GPL source</a>
+    </header>
+
+    <section class="ssx-settings-hero">
+      <span class="ssx-section-label">Inspector posture</span>
+      <h1>URLs in. Files never.</h1>
+      <p>Streamscope observes browser request metadata and page media elements. It does not fetch media, write files, or send browsing history to us.</p>
+    </section>
+
+    <div class="ssx-settings-grid">
+      <section class="ssx-settings-card" aria-labelledby="ssx-licence-heading">
+        <div class="ssx-settings-card-head">
+          <div><span class="ssx-section-label">Licence</span><h2 id="ssx-licence-heading">Session history capacity</h2></div>
+          <span class="ssx-licence-state" id="ssx-licence-state" role="status" aria-live="polite">FREE</span>
+        </div>
+        <p>Free keeps 80 observed URLs per browser session. A valid key raises that limit to 500. Every inspection feature stays available.</p>
+        <label class="ssx-field-label" for="ssx-licence-key">Licence key</label>
+        <input id="ssx-licence-key" class="ssx-input" inputmode="text" autocomplete="off" spellcheck="false" placeholder="ZOVO-XXXX-XXXX-XXXX-XXXX" aria-describedby="ssx-licence-help">
+        <p class="ssx-field-help" id="ssx-licence-help">Keys are shape-checked locally, then verified. Access is granted only when the response returns valid: true.</p>
+        <div class="ssx-settings-actions">
+          <button type="button" class="ssx-primary-button" id="ssx-activate">Activate key</button>
+          <button type="button" class="ssx-secondary-button ssx-deactivate" id="ssx-deactivate" hidden>Deactivate</button>
+          <a class="ssx-plan-link" href="https://zovo.one/pricing" target="_blank" rel="noreferrer"><span>Get a key</span></a>
+        </div>
+      </section>
+
+      <section class="ssx-settings-card" aria-labelledby="ssx-data-heading">
+        <span class="ssx-section-label">Local data</span>
+        <h2 id="ssx-data-heading">Browser-session storage</h2>
+        <p>Current tab inventory, page-player state, and prior URLs live in <code>chrome.storage.session</code>. Chrome removes them when the browser session ends.</p>
+        <button type="button" class="ssx-secondary-button ssx-clear-data" id="ssx-clear-session">Clear session history now</button>
+      </section>
+
+      <section class="ssx-settings-card" aria-labelledby="ssx-permissions-heading">
+        <span class="ssx-section-label">Permissions</span>
+        <h2 id="ssx-permissions-heading">Why broad page access?</h2>
+        <ul class="ssx-permission-list">
+          <li><strong>webRequest</strong><span>Reads URL and response headers for passive type and size hints.</span></li>
+          <li><strong>tabs & webNavigation</strong><span>Keeps each inventory attached to the correct tab and page visit.</span></li>
+          <li><strong>storage</strong><span>Restores the inventory if the MV3 worker sleeps.</span></li>
+          <li><strong>clipboardWrite</strong><span>Copies the exact observed URL when you click Copy URL.</span></li>
+        </ul>
+      </section>
+    </div>
+
+    <footer class="ssx-settings-footer">
+      <span>Version 1.0.0 · GPL-3.0-only</span>
+      <span>Based on the upstream GPL project; modified for passive inspection.</span>
+    </footer>
+  </main>
+  <div class="ssx-toast" id="ssx-toast" role="status" aria-live="polite"></div>
+  <script src="scope-license.client.js"></script>
+  <script src="scope-settings.controller.js"></script>
+</body>
+</html>
