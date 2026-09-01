@@ -16,6 +16,7 @@ Chrome-derived extension ID: `aiofomoohdnaioekjbankniihikacnnm`.
 | r2 | Four re-captures | Popup now fit. Hidden control fixed. Settings hierarchy strong. Dark primary used white on bright cyan; gold link label had a capture paint defect. | Repair required |
 | r3 | Four re-captures | Cyan button changed to deep-cyan text for accessible contrast. Layout, dark surfaces, and focus hierarchy passed. Gold label still partially failed to paint despite an intact 88×40 DOM box and computed text color. | Paint hardening required |
 | r4 | Four re-captures | Explicit child text-fill resolved the gold-label paint defect. No clipping, missing copy, substitution artifacts, or dark-mode regressions remained. | **PASS** |
+| release re-capture | Mandatory command against the final build | A flaky dark-theme anchor paint was eliminated by making the pricing CTA a fixed-width semantic button with an explicit `chrome.tabs.create` action. Fresh popup/settings captures in both themes are complete and unclipped. | **PASS** |
 
 ## Final critic scores (r4)
 
@@ -38,3 +39,7 @@ Passing evidence:
 ## Rubric conclusion
 
 Final r4 has one hero metric, one cyan action hierarchy, one restrained gold upgrade path, 8px-grid spacing, a unique `ssx` namespace and optical-desk identity, friendly empty art, real metrics, readable dark mode, visible accessible labels, and no clipped or placeholder UI. Design gate: **PASS**.
+
+The final release re-capture was inspected after the r4 critic pass. It preserves
+the same visual system and confirms that the pricing label paints reliably in
+dark mode. Design gate remains **PASS**.

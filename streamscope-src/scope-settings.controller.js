@@ -53,5 +53,9 @@
     showToast('Session history cleared.');
   });
 
+  byId('ssx-get-key').addEventListener('click', () => {
+    chrome.tabs.create({ url: 'https://zovo.one/pricing' });
+  });
+
   renderLicence().catch(() => showToast('Licence status is unavailable.'));
 })();

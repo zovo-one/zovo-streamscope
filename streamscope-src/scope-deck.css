@@ -151,8 +151,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
 .ssx-primary-button:hover { background: var(--ssx-primary-dark); }
 .ssx-primary-button:disabled { cursor: progress; opacity: .65; }
 .ssx-deactivate { flex: 0 0 auto; padding: 8px 16px; }
-.ssx-plan-link { min-width: 88px; min-height: 40px; display: inline-flex; align-items: center; justify-content: center; margin-left: auto; padding: 8px 12px; border-radius: 8px; background: var(--ssx-pro); color: #422006; text-decoration: none; font-weight: 750; white-space: nowrap; }
-.ssx-plan-link span { color: #422006; -webkit-text-fill-color: #422006; }
+.ssx-plan-link { width: 96px; min-height: 40px; display: inline-flex; align-items: center; justify-content: center; flex: 0 0 96px; margin-left: auto; padding: 8px 12px; border: 0; border-radius: 8px; appearance: none; background: var(--ssx-pro); color: #422006; cursor: pointer; font-weight: 750; white-space: nowrap; -webkit-text-fill-color: #422006; }
 .ssx-clear-data { width: 100%; margin-top: 4px; }
 .ssx-permission-list { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
 .ssx-permission-list li { display: grid; gap: 2px; padding-bottom: 12px; border-bottom: 1px solid var(--ssx-border); }
